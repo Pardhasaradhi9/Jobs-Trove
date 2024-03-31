@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs Trove - Job Recommendations Engine</title>
+    <style>
+        body {
+            background-color: white;
+        }
+        /* Center the title */
+        h1 {
+            color: #333;
+            font-size: 36px;
+            text-align: center;
+        }
+        /*styles for the search box */
+        input[type="text"] {
+            width: 80%;
+            max-width: 500px; /* Limit the maximum width */
+            padding: 12px;
+            border: 1px solid #baccdf;
+            border-radius: 20px;
+            margin: 20px auto; /* Center the search box */
+            display: block;
+            text-align: center; /* Center the placeholder text */
+        }
+        /*styles for the "Get Recommendations" button */
+        button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 18px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto; /* Center the button */
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        /* Styles for top searched jobs & states sections */
+        /* Section titles */
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+        /* Round rectangle boxes */
+        .round-rectangle {
+            width: 200px;
+            height: 100px;
+            background-color: #d5f4e6; /* Light blue */
+            border-radius: 20px;
+            margin: 20px 10px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Rounded boxes for states */
+        .rounded-box {
+            width: 150px;
+            height: 80px;
+            background-color: #80ced6; /* Gold */
+            border-radius: 25px;
+            margin: 20px 5px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jobs Trove - Job Recommendations Engine</h1>
+    <form action="/recommendations" method="post">
+        <input type="text" name="query" placeholder="Search for job titles...">
+        <button type="submit">Get Recommendations</button>
+    </form>
+
+    <!-- Section: Top searched job roles -->
+    <div class="section-title">Top searched job roles</div>
+    <div style="text-align: center;">
+        <div class="round-rectangle">Digital Marketing</div>
+        <div class="round-rectangle">Product Marketing</div>
+        <div class="round-rectangle">Sales Lead</div>
+    </div>
+    <div style="text-align: center;">
+        <div class="round-rectangle">Business Executive</div>
+        <div class="round-rectangle">Influencer Marketing</div>
+        <div class="round-rectangle">Chief Tech Officer</div>
+    </div>
+
+    <!-- Section: States offering most jobs -->
+    <div class="section-title">States offering most jobs</div>
+    <div style="text-align: center;">
+        <div class="rounded-box">Karnataka</div>
+        <div class="rounded-box">Maharashtra</div>
+        <div class="rounded-box">Haryana</div>
+        <div class="rounded-box">Delhi</div>
+    </div>
+    <div style="text-align: center;">
+        <div class="rounded-box">Uttar Pradesh</div>
+        <div class="rounded-box">Telangana</div>
+        <div class="rounded-box">Tamil Nadu</div>
+        <div class="rounded-box">Gujarat</div>
+    </div>
+</body>
+</html>

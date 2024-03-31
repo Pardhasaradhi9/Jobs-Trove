@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs Trove - Job Recommendations Engine</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Styles for the container */
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+        /* Styles for the form */
+        form {
+            margin-bottom: 20px;
+        }
+        /* Styles for the search box */
+        input[type="text"] {
+            width: 80%;
+            max-width: 500px; /* Limit the maximum width */
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            text-align: center; /* Center the placeholder text */
+            margin: 0 auto; /* Center the search box */
+            display: block;
+        }
+        /* Styles for the buttons */
+        button, .btn {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover, .btn:hover {
+            background-color: #0056b3;
+        }
+        /* Styles for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border-radius: 20px; /* Rounded edges for the table */
+            overflow: hidden; /* Hide overflow content */
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff; /* Blue */
+            color: white;
+        }
+        /* Styles for the match category */
+        .match-category {
+            font-weight: bold;
+        }
+        .perfect-match {
+            color: green;
+        }
+        .great-match {
+            color: green;
+        }
+        .decent-match {
+            color: orange;
+        }
+        .similar-match {
+            color: black;
+        }
+        .poor-match {
+            color: red;
+        }
+        /* Styles for the "Back to Top" button */
+        .back-to-top {
+            margin: 20px auto; /* Center the button */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb-3">Jobs Trove - Job Recommendations Engine</h2>
+        <form action="/recommendations" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" name="query" placeholder="Search for job titles...">
+            </div>
+            <button type="submit" class="btn btn-primary">Get Recommendations</button>
+            <a href="/" class="btn btn-primary">Home</a>
+        </form>
+        <h4>Recommendations:</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Job ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Company</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Mode</th>
+                    <th scope="col">Place</th>
+                    <th scope="col">Link</th>
+                    <th scope="col">Match</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                <tr>
+                    <td>{{ result['jobId'] }}</td>
+                    <td>{{ result['title'] }}</td>
+                    <td>{{ result['company'] }}</td>
+                    <td>{{ result['type'] }}</td>
+                    <td>{{ result['mode'] }}</td>
+                    <td>{{ result['place'] }}</td>
+                    <td><a href="{{ result['link'] }}" target="_blank">Click for more info</a></td>
+                    <td class="match-category {{ result['match_category']|lower|replace(' ', '-') }}">{{ result['match_category'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="#top" class="btn btn-primary back-to-top">Back to Top</a>
+    </div>
+</body>
+</html>
