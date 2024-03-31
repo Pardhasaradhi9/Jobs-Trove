@@ -26,6 +26,6 @@ Jobs Trove is a web application that provides personalized job recommendations b
 # Note: This project is for educational purposes and demonstrates the implementation of a simple job recommendation engine using NLP techniques and web development technologies.
 # Thanks to "Appavengers" team for providing this amazing dataset.
 
-### feel free to contact me on my email "pardhuchukka@yahoo.com" for collabaration or suggestions.
-### you can follow me on linkedIn "www.linkedin.com/in/pardhasaradhi-chukka-8302a615a" 
-### feel to download this code and add your own touch to this
+### Feel free to contact me on my email "pardhuchukka@yahoo.com" for collabaration or suggestions.
+### You can follow me on linkedIn "www.linkedin.com/in/pardhasaradhi-chukka-8302a615a" 
+### Feel free to download this code and add your own touch to this
